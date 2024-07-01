@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Personal Website</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <p>The time is: &#160</p>
+            <div>
+                <p id="websiteTime" data-testid="currentTimeUTC"></p>
+                <p id="websiteDay" data-testid="currentDay"> </p>
+            </div>
+        </header>
+        <section class="section__heading">
+            <h1>My 2-Year Tech Goal Blueprint</h1>
+            <p>A step-by-step outline of what I will achieve in tech in two years' time.</p>
+            <section class="section__heading-sub">
+                <article>
+                    <img src="./assets/images/profile-pic.png" alt="" data-testid="slackProfilePicture">
+                    <p style="color: black" data-testid="slackDisplayName">Evans Allison</p>
+                    <a href="mailto:allisonevans081@gmail.com" data-testid="slackEmail">allisonevans081@gmail.com</a>
+                </article>
+            </section>
+        </section>
+
+        <section class="section__body">
+            <article>
+                <h1>Introduction</h1>
+                <p>In the rapidly evolving world of technology, setting clear and ambitious goals is crucial. Over the next two years, I
+                have mapped out a series of milestones that will guide my journey and growth in the tech industry.</p>
+            </article>
+
+            <article>
+                <h1>My Goals Outline:</h1>
+                <ol>
+                    <li>Learning Frontend Frameworks and Packages: 
+                        <p>Acquire proficiency in all essential frontend frameworks and related packages to enhance skills and stay updated with
+                        industry standards.</p>
+                    </li>
+                    <li>Building Personal Projects:
+                        <p>Develop and complete personal projects that showcase your skills and creativity, providing practical experience in
+                        applying frontend technologies.</p>
+                    </li>
+                    <li>Securing a Tech Job:
+                        <p>Secure a rewarding tech job that aligns with your skills and career aspirations, contributing to professional growth and
+                        development.</p>
+                    </li>
+                    <li>Achieving Personal Reward:
+                        <p>Achieve personal milestones, such as purchasing a yacht and taking a well-deserved vacation to celebrate accomplishments
+                        and recharge creatively.</p>
+                    </li>
+                    <li>Giving Back Through Mentorship:
+                        <p>Give back to the tech community by mentoring or teaching others, sharing knowledge and experience to support aspiring
+                        developers and contribute positively to the industry.</p>
+                    </li>
+                </ol>
+            </article>
+
+            <article>
+                <h1>Conclusion:</h1>
+                <p>This roadmap not only fuels my passion for technology but also reflects my dedication to continuous growth and
+                contributions in the ever-evolving tech landscape</p>
+            </article>
+        </section>
+
+        <footer>
+            <p>Helpful Links:</p>
+            <div>
+                <a data-testid="hngLink" href="https://hng.tech/learn" target="_blank">HNG Website</a>
+                <a data-testid="keywordLink" href="https://keyword.dog/" target="_blank">Keyword.dog</a>
+                <a data-testid="scrapeanywebLink" href="https://scrapeanyweb.site/" target="_blank">Scrape Any Website</a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+<script>
+    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    setInterval(() => {
+    const date = new Date()
+    const time = {
+        hour: date.getUTCHours(),
+        minute: date.getUTCMinutes(),
+        seconds: date.getUTCSeconds()
+    }
+    const day = daysOfWeek[date.getUTCDay()]
+        document.querySelector('#websiteDay').textContent = `, ${day}`
+        document.querySelector('#websiteTime').textContent = `${time.hour} : ${time.minute} : ${time.seconds}`
+        // console.log('hey')
+    }, 1000)
+    
+</script>
+</html>
